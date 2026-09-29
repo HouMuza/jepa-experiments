@@ -31,6 +31,13 @@ For the step-by-step lesson, open:
 jupyter lab 01-image-embeddings/experiment.ipynb
 ```
 
+Run the first code cell before the imports below it. That cell locates the project root and makes
+the shared `jepa` package available to the active notebook kernel.
+
+The notebook uses the `Python (JEPA Experiments)` kernel, which points to the Python environment
+where this project and its dependencies are installed. If Jupyter asks you to choose a kernel,
+select that one.
+
 ## What to notice
 
 - RGB still means three values per pixel.
