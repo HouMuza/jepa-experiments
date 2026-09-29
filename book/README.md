@@ -32,7 +32,7 @@ Each chapter follows the same path:
 
 1. [From pixels to embeddings](01-from-pixels-to-embeddings.md)
 2. [Reconstructing missing pixels](02-reconstructing-missing-pixels.md)
-3. Predicting hidden embeddings
+3. [Predicting hidden embeddings](03-predicting-hidden-embeddings.md)
 4. Pixels versus embeddings
 5. Asking what an embedding knows
 6. Learning what to ignore
