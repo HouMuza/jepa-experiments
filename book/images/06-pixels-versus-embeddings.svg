@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="480" viewBox="0 0 1120 480" role="img" aria-labelledby="title desc">
+  <title id="title">Pixel targets compared with embedding targets</title>
+  <desc id="desc">Two models receive the same masked image. One predicts RGB values and uses pixel loss. The other predicts target encoder vectors and uses embedding loss.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#475569"/></marker></defs>
+  <rect width="1120" height="480" rx="18" fill="#fbfaf7"/>
+  <text x="560" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#172033">Same hidden region, different prediction target</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="455" y="75" width="210" height="76" rx="12" fill="#d8efe9" stroke="#56b4a5" stroke-width="2"/>
+    <text x="560" y="106" text-anchor="middle" font-size="18" font-weight="700" fill="#172033">Masked CIFAR-10 image</text>
+    <text x="560" y="131" text-anchor="middle" font-size="15" fill="#334155">16 of 64 patches hidden</text>
+    <path d="M520 170L310 225" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M600 170L810 225" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="90" y="215" width="300" height="98" rx="14" fill="#f3b33d" stroke="#172033" stroke-width="2"/>
+    <text x="240" y="250" text-anchor="middle" font-size="20" font-weight="700" fill="#172033">Pixel model</text>
+    <text x="240" y="278" text-anchor="middle" font-size="16" fill="#5b4630">predict 48 RGB values per patch</text>
+    <text x="240" y="300" text-anchor="middle" font-size="15" fill="#5b4630">fixed observable target</text>
+    <path d="M240 333V370" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="125" y="385" width="230" height="62" rx="12" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+    <text x="240" y="411" text-anchor="middle" font-size="18" font-weight="700" fill="#172033">Masked pixel MSE</text>
+    <text x="240" y="433" text-anchor="middle" font-size="14" fill="#7f1d1d">exact colour and texture error</text>
+
+    <rect x="730" y="215" width="300" height="98" rx="14" fill="#eee9fb" stroke="#7c3aed" stroke-width="2"/>
+    <text x="880" y="250" text-anchor="middle" font-size="20" font-weight="700" fill="#172033">Tiny JEPA</text>
+    <text x="880" y="278" text-anchor="middle" font-size="16" fill="#7c3aed">predict 128 numbers per patch</text>
+    <text x="880" y="300" text-anchor="middle" font-size="15" fill="#7c3aed">moving EMA encoder target</text>
+    <path d="M880 333V370" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="765" y="385" width="230" height="62" rx="12" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+    <text x="880" y="411" text-anchor="middle" font-size="18" font-weight="700" fill="#172033">Embedding loss</text>
+    <text x="880" y="433" text-anchor="middle" font-size="14" fill="#7f1d1d">vector direction error</text>
+
+    <text x="560" y="265" text-anchor="middle" font-size="18" font-weight="700" fill="#172033">≠</text>
+    <text x="560" y="292" text-anchor="middle" font-size="14" fill="#475569">raw losses cannot be compared</text>
+  </g>
+</svg>
