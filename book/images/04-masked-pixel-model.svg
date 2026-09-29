@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="470" viewBox="0 0 1120 470" role="img" aria-labelledby="title desc">
+  <title id="title">Masked pixel reconstruction architecture</title>
+  <desc id="desc">An image is divided into patches, hidden patches receive mask tokens, a transformer processes the sequence, and a pixel head predicts RGB values compared with the hidden targets.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#475569"/></marker></defs>
+  <rect width="1120" height="470" rx="18" fill="#fbfaf7"/>
+  <text x="560" y="42" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#172033">Experiment 02 predicts hidden pixels</text>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(40 105)">
+      <rect width="170" height="170" rx="9" fill="#56b4a5" stroke="#172033" stroke-width="2"/>
+      <path d="M0 21.25H170M0 42.5H170M0 63.75H170M0 85H170M0 106.25H170M0 127.5H170M0 148.75H170M21.25 0V170M42.5 0V170M63.75 0V170M85 0V170M106.25 0V170M127.5 0V170M148.75 0V170" stroke="#fff" stroke-width="1"/>
+      <rect x="42.5" y="42.5" width="85" height="85" fill="#9ca3af" stroke="#172033" stroke-width="2"/>
+      <text x="85" y="205" text-anchor="middle" font-size="18" font-weight="700" fill="#172033">Visible image</text>
+      <text x="85" y="229" text-anchor="middle" font-size="15" fill="#64748b">16 hidden patches</text>
+    </g>
+    <path d="M230 190H295" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(320 113)">
+      <rect width="170" height="154" rx="14" fill="#d8efe9" stroke="#56b4a5" stroke-width="2"/>
+      <text x="85" y="59" text-anchor="middle" font-size="19" font-weight="700" fill="#172033">Patch projection</text>
+      <text x="85" y="88" text-anchor="middle" font-size="16" fill="#334155">+ mask tokens</text>
+      <text x="85" y="115" text-anchor="middle" font-size="16" fill="#334155">+ positions</text>
+    </g>
+    <path d="M510 190H575" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(600 113)">
+      <rect width="170" height="154" rx="14" fill="#f3b33d" stroke="#172033" stroke-width="2"/>
+      <text x="85" y="65" text-anchor="middle" font-size="20" font-weight="700" fill="#172033">Transformer</text>
+      <text x="85" y="96" text-anchor="middle" font-size="16" fill="#5b4630">4 blocks</text>
+    </g>
+    <path d="M790 190H855" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(880 113)">
+      <rect width="190" height="154" rx="14" fill="#eee9fb" stroke="#7c3aed" stroke-width="2"/>
+      <text x="95" y="59" text-anchor="middle" font-size="20" font-weight="700" fill="#172033">Pixel head</text>
+      <text x="95" y="90" text-anchor="middle" font-size="16" fill="#7c3aed">48 predicted values</text>
+      <text x="95" y="116" text-anchor="middle" font-size="16" fill="#7c3aed">for each patch</text>
+    </g>
+    <path d="M975 282V340H560" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+    <g transform="translate(425 340)">
+      <rect width="270" height="80" rx="14" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+      <text x="135" y="33" text-anchor="middle" font-size="19" font-weight="700" fill="#172033">Masked pixel loss</text>
+      <text x="135" y="59" text-anchor="middle" font-size="15" fill="#7f1d1d">compare hidden RGB values only</text>
+    </g>
+    <path d="M125 292V380H405" fill="none" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#arrow)"/>
+    <text x="255" y="371" text-anchor="middle" font-size="15" fill="#7f1d1d">real hidden pixels</text>
+  </g>
+</svg>
