@@ -40,7 +40,7 @@ results, mistakes, and conclusions. Start with the [book introduction](book/READ
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e .
+python -m pip install -e '.[notebooks]'
 ```
 
 Download and inspect CIFAR-10:
@@ -55,7 +55,7 @@ Start with:
 python 01-image-embeddings/inspect_embeddings.py
 ```
 
-The first script creates a small synthetic RGB image, divides it into 4 x 4 patches, projects each
+The first script loads a prepared CIFAR-10 image, divides it into 4 x 4 patches, projects each
 48-number patch into a 128-number vector, and saves a visual explanation in `artifacts/`.
 
 ## Project layout

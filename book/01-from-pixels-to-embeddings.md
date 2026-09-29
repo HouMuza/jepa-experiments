@@ -113,7 +113,8 @@ targets and observe what information their embeddings preserve.
 
 ## Our first experiment
 
-The first program creates a synthetic 32 by 32 colour image. It then:
+The first program loads a real 32 by 32 colour image from our prepared CIFAR-10 training set. It
+shows the label to us for orientation, but the label is not passed into the projection. It then:
 
 1. divides the image into 64 patches;
 2. flattens each patch into 48 values;
@@ -127,6 +128,29 @@ python 01-image-embeddings/inspect_embeddings.py
 ```
 
 The program saves a figure as `artifacts/01-image-embeddings.png`.
+
+The accompanying notebook, `01-image-embeddings/experiment.ipynb`, lets us pause after each
+transformation, inspect the tensor shapes, and see the 64 by 128 embedding matrix.
+
+## What we observed
+
+We ran the experiment on the first image in the CIFAR-10 training split, which is labelled as a
+frog. The transformations produced these shapes:
+
+```text
+image       (3, 32, 32)
+batched     (1, 3, 32, 32)
+patches     (1, 64, 48)
+embeddings  (64, 128)
+```
+
+The first dimension of the batched image is `1` because we processed one image. Patchifying kept all
+3,072 input values: `64 × 48` is also 3,072. The projection changed the size of each patch
+description from 48 to 128, producing `64 × 128 = 8,192` output values.
+
+More numbers do not automatically mean more information. The projection is random at this point.
+Its output has the shape required by our later model, but training has not yet made that output
+useful.
 
 ## What this experiment teaches us
 

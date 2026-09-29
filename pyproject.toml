@@ -14,5 +14,8 @@ dependencies = [
   "torchvision>=0.17",
 ]
 
+[project.optional-dependencies]
+notebooks = ["jupyterlab>=4"]
+
 [tool.setuptools.packages.find]
 include = ["jepa*"]
