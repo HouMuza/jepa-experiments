@@ -45,7 +45,7 @@ Each chapter follows the same path:
 2. [Reconstructing missing pixels](02-reconstructing-missing-pixels.md)
 3. [Predicting hidden embeddings](03-predicting-hidden-embeddings.md)
 4. [Pixels versus embeddings](04-pixels-versus-embeddings.md)
-5. Asking what an embedding knows
+5. [Asking what an embedding knows](05-asking-what-an-embedding-knows.md)
 6. Learning what to ignore
 7. Predicting the next moment
 8. Predicting the result of an action
