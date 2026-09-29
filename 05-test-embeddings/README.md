@@ -25,3 +25,10 @@ the raw input. See the notebook and Chapter 5 for the interpretation.
 
 The follow-up notebook, `collapse_diagnostics.ipynb`, tests random block masking and a variance
 regularizer as a possible response.
+
+## Collapse diagnostic result
+
+Random masking lowered probe accuracy from `29.6%` to `28.0%`. The variance regularizer greatly
+increased representation spread but reached only `28.1%`. The interventions changed the embedding
+geometry without improving class information. This gives us a central lesson: diversity is not the
+same as semantic usefulness.

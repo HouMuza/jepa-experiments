@@ -106,3 +106,34 @@ separate downstream measurement is necessary.
 For this run, the pixel reconstruction representation made CIFAR-10 class information easiest for
 a linear classifier to read. We will keep this disappointing result. It motivates a focused
 follow-up that moves the hidden block and explicitly discourages low-variance features.
+
+## Follow-up: testing our collapse explanation
+
+Experiment 05B compared three JEPAs trained together:
+
+| JEPA condition | Probe accuracy | Standard deviation |
+| --- | ---: | ---: |
+| Central mask | **29.6%** | 0.74% |
+| Random mask | 28.0% | 0.64% |
+| Random mask plus variance | 28.1% | 0.65% |
+
+The moving block made prediction harder and separated different images more strongly. Across-image
+cosine similarity fell from `0.7106` with the central mask to `0.4922`, but probe accuracy also fell
+by 1.6 percentage points. The fixed centre was therefore not a sufficient explanation for the weak
+semantic result.
+
+The variance penalty had an even larger geometric effect. It raised normalized feature standard
+deviation from `0.0433` to `0.0800`, reduced across-image similarity to `0.1590`, and raised
+effective rank from `16.03` to `18.22`. Nevertheless, its probe reached only `28.1%`.
+
+This is an important negative result. We successfully made the embeddings more varied without
+making class information easier to read. Variation can describe colour, position, texture, noise,
+or other distinctions that do not align with object identity.
+
+The central-mask control also varied across pretraining runs: `29.6%` here compared with `31.6%` in
+the first linear-probe experiment. Repeating probe seeds measures only classifier variation. Future
+strong comparisons should repeat the complete self-supervised training process.
+
+Our first collapse explanation was incomplete. Before adding more regularizers, the next experiment
+will measure which image changes dominate the learned representation. That is the subject of
+Chapter 6: invariance.
