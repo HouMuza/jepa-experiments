@@ -12,6 +12,10 @@ pixels?
 
 ## The architecture
 
+The [book overview](README.md) shows the complete image-JEPA idea and the larger example settings we
+are working toward. Our first implementation is deliberately smaller: it uses a 25 percent central
+mask, batch size 64, and 1,229,440 trainable parameters.
+
 ![Tiny JEPA architecture and gradient flow](images/05-tiny-jepa.svg)
 
 *Figure 3.1 — The context encoder and predictor learn through gradients. The target encoder receives
@@ -100,4 +104,3 @@ test two separate properties:
 The diversity diagnostics address the first question. A later linear probe will address the
 second. Until those checks pass, we should describe this run as successful target matching with a
 possible collapse warning, rather than evidence that the model understands the images.
-

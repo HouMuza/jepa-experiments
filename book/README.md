@@ -9,6 +9,17 @@ image and one simple question:
 > Can a model learn what matters in an image by predicting an internal representation of a hidden
 > part?
 
+![Conceptual overview of an image JEPA](images/00-jepa-image-overview.png)
+
+*Figure 0.1 — The complete idea in one view: create visible and hidden regions, encode them, predict
+the hidden representations from the visible context, and train by comparing vectors rather than
+pixels. The settings printed in this overview are illustrative; individual experiments use the
+configurations recorded in their chapters.*
+
+This figure is our map of the destination. The early chapters deliberately isolate one part at a
+time: pixels and patches, pixel reconstruction, the two encoders, the predictor, and the latent
+loss. We will return to the complete diagram as those pieces become familiar.
+
 Every chapter introduces one new idea. We will inspect the data, print tensor shapes, draw the
 architecture, train a small model, and study what it learned. When an experiment fails, that failure
 will become part of the explanation.
