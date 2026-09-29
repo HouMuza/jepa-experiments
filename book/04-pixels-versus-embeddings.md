@@ -92,14 +92,70 @@ jupyter lab 04-pixel-vs-embedding/experiment.ipynb
 Select `Python (JEPA Experiments)` and run the notebook in order. It trains both models, so it will
 take longer than the earlier notebooks.
 
-## How we will write the conclusion
+## What happened
 
-We will not choose a winner from one convenient number. The conclusion must distinguish:
+### Prediction fit
 
-1. prediction fit;
-2. generalization to held-out images;
-3. resistance to representation collapse;
-4. semantic information in the embedding neighbourhoods.
+| Model | Initial loss | Epoch 5 loss | Starting error remaining |
+| --- | ---: | ---: | ---: |
+| Pixel target | 0.683755 | 0.039632 | 5.8% |
+| Embedding target | 0.017208 | 0.000197 | 1.1% |
 
-The executed results will be added here after the run.
+JEPA reached its best value, `0.000145`, at epoch 3 and then weakened slightly. This repeated the
+late reversal from Experiment 03. It matched its moving target faster than the pixel model reduced
+its own error.
 
+The relative comparison has limits. Initial loss was measured on one batch, epoch loss was averaged
+over the training subset, dropout was active during training, and JEPA’s EMA target changed after
+every update.
+
+### Held-out prediction
+
+| Measurement on 1,000 test images | Result |
+| --- | ---: |
+| Pixel MSE | 0.034667 |
+| JEPA embedding loss | 0.000222 |
+| JEPA cosine similarity | 0.9858 |
+
+Both models predicted their own targets on unseen images. Pixel MSE and embedding loss remain
+different measurements and cannot be compared directly.
+
+### Representation diversity
+
+| Measurement | Pixel model | JEPA |
+| --- | ---: | ---: |
+| Feature standard deviation | 0.0155 | 0.0393 |
+| Similarity among patches in one image | 0.9973 | 0.9925 |
+| Similarity across different images | 0.9702 | 0.7812 |
+| Effective rank out of 128 | 38.06 | 21.62 |
+
+JEPA separated different images more strongly: its across-image similarity was much lower and its
+feature variation was higher. Its effective rank was also lower, so that variation occupied fewer
+independent directions. The pixel representation used more directions but placed different images
+closer together. Patches inside the same image were extremely similar for both models.
+
+The JEPA representation did not completely collapse. Its different-image similarity was well below
+one, and its effective rank was above one. It nevertheless used only a relatively small part of its
+128-dimensional space.
+
+### Nearest-neighbour label agreement
+
+| Reference or model | Agreement |
+| --- | ---: |
+| Random reference | about 10.0% |
+| Pixel representation | 18.3% |
+| JEPA representation | 16.5% |
+
+Both representations contained some class-related structure without seeing labels during training.
+The pixel model was 1.8 percentage points higher in this run. One seed, 1,000 test images, and a
+nearest-neighbour measurement are not enough to treat that small difference as a general result.
+
+## What we learned
+
+Changing the prediction target changed the geometry of the representation. JEPA distinguished whole
+images more strongly but concentrated the variation into fewer directions. The pixel model used
+more directions and achieved slightly higher nearest-neighbour class agreement.
+
+Our prediction that JEPA would immediately produce the more semantic representation was not
+supported. There is no clear winner yet. Experiment 05 will train linear probes on frozen encoders
+and repeat the evaluation under controlled conditions.
