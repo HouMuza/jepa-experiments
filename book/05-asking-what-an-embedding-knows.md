@@ -77,3 +77,32 @@ This experiment uses one pretraining seed, a limited training subset, mean pooli
 probe recipe. Its conclusion applies to these particular representations and settings. Later work
 can repeat pretraining, tune the probe on a validation set, or test which individual visual
 properties are encoded.
+
+## What happened
+
+| Input to the linear probe | Mean test accuracy | Standard deviation |
+| --- | ---: | ---: |
+| Raw pixels | 31.3% | 1.38% |
+| Pixel-model representation | **35.3%** | 0.34% |
+| JEPA representation | 31.6% | 0.74% |
+
+All three probes exceeded the roughly 10 percent chance level. The pixel-model representation was
+4.0 percentage points above raw pixels and 3.7 points above JEPA. JEPA was only 0.3 points above raw
+pixels, less than the variation among its probe runs.
+
+The result also changes how we interpret the training loss. JEPA reached a loss of `0.000067` after
+four epochs, yet that close target match did not produce the best linear probe. Predicting the EMA
+target accurately was therefore an incomplete measure of representation quality.
+
+This agrees with the weaker nearest-neighbour result from Experiment 04. Two different evaluations
+now point in the same direction: our current JEPA representation contains some class information,
+but the pixel reconstruction representation makes more of it linearly accessible.
+
+## What we learned
+
+A low embedding-prediction loss does not establish that useful semantic structure has emerged. A
+separate downstream measurement is necessary.
+
+For this run, the pixel reconstruction representation made CIFAR-10 class information easiest for
+a linear classifier to read. We will keep this disappointing result. It motivates a focused
+follow-up that moves the hidden block and explicitly discourages low-variance features.

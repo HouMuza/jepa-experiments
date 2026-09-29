@@ -16,3 +16,12 @@ for each representation. CIFAR-10 labels are used only by the probes.
 
 This notebook is intentionally standalone. It does not depend on model objects left in memory by a
 previous notebook.
+
+## First run
+
+The pixel-model probe reached **35.3%** held-out accuracy, compared with **31.6%** for JEPA and
+**31.3%** for raw pixels. Our current JEPA beat chance but did not produce a clear improvement over
+the raw input. See the notebook and Chapter 5 for the interpretation.
+
+The follow-up notebook, `collapse_diagnostics.ipynb`, tests random block masking and a variance
+regularizer as a possible response.

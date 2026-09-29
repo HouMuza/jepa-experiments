@@ -14,6 +14,25 @@ def centered_block_mask(grid_size: int, block_size: int, *, device: torch.device
     return mask.flatten()
 
 
+def random_block_mask(
+    grid_size: int,
+    block_size: int,
+    *,
+    device: torch.device | None = None,
+    generator: torch.Generator | None = None,
+) -> torch.Tensor:
+    """Return a flat boolean mask for a square block at a random valid position."""
+    if block_size <= 0 or block_size > grid_size:
+        raise ValueError("block_size must be between 1 and grid_size")
+
+    positions = grid_size - block_size + 1
+    row = int(torch.randint(positions, (), generator=generator))
+    column = int(torch.randint(positions, (), generator=generator))
+    mask = torch.zeros(grid_size, grid_size, dtype=torch.bool, device=device)
+    mask[row : row + block_size, column : column + block_size] = True
+    return mask.flatten()
+
+
 def paint_masked_patches(
     images: torch.Tensor, mask: torch.Tensor, *, patch_size: int, value: float = 0.5
 ) -> torch.Tensor:
