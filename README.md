@@ -16,6 +16,7 @@ cannot see, rather than recreating every missing pixel?
 
 | Folder | Question |
 | --- | --- |
+| `00-prepare-data` | What data will all the image experiments use? |
 | `01-image-embeddings` | How does an image become patches and vectors? |
 | `02-autoencoder` | What does a model learn when it must reconstruct pixels? |
 | `03-tiny-jepa` | Can it predict the embedding of a hidden region? |
@@ -45,7 +46,7 @@ python -m pip install -e .
 Download and inspect CIFAR-10:
 
 ```bash
-python 01-image-embeddings/download_cifar10.py
+python 00-prepare-data/prepare_cifar10.py
 ```
 
 Start with:
@@ -64,6 +65,7 @@ JEPA Experiments/
 ├── jepa/                       shared code used by several experiments
 ├── artifacts/                  generated figures and results
 ├── book/                       long-form chapters and experiment records
+├── 00-prepare-data/
 ├── 01-image-embeddings/
 ├── 02-autoencoder/
 ├── 03-tiny-jepa/

@@ -24,18 +24,6 @@ python 01-image-embeddings/inspect_embeddings.py
 
 Then open `artifacts/01-image-embeddings.png`.
 
-## Download CIFAR-10
-
-After installing the project dependencies, download and inspect the real dataset with:
-
-```bash
-python 01-image-embeddings/download_cifar10.py
-```
-
-This downloads the standard 50,000-image training split and 10,000-image test split into `data/`.
-The files in that folder are deliberately excluded from Git. The script also saves ten labelled
-examples to `artifacts/01-cifar10-samples.png`.
-
 ## What to notice
 
 - RGB still means three values per pixel.

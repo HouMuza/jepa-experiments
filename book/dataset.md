@@ -56,9 +56,8 @@ data/
 Run the acquisition and inspection step with:
 
 ```bash
-python 01-image-embeddings/download_cifar10.py
+python 00-prepare-data/prepare_cifar10.py
 ```
 
 The script verifies the split sizes and image shape, then saves a sample grid to
-`artifacts/01-cifar10-samples.png`.
-
+`artifacts/00-cifar10-samples.png`.

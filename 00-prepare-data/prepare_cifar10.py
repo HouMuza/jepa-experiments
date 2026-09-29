@@ -39,7 +39,7 @@ def main() -> None:
     if len(train_data) != 50_000 or len(test_data) != 10_000:
         raise RuntimeError("CIFAR-10 split sizes do not match the published dataset")
 
-    output = Path("artifacts/01-cifar10-samples.png")
+    output = Path("artifacts/00-cifar10-samples.png")
     save_sample_grid(images, labels, output)
 
     print(f"Training images: {len(train_data):,}")
@@ -51,3 +51,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

@@ -13,6 +13,9 @@ Every chapter introduces one new idea. We will inspect the data, print tensor sh
 architecture, train a small model, and study what it learned. When an experiment fails, that failure
 will become part of the explanation.
 
+Before Chapter 1, [Experiment 00](../00-prepare-data/README.md) acquires and validates the shared
+CIFAR-10 dataset. The remaining image experiments use that prepared data.
+
 ## How each chapter works
 
 Each chapter follows the same path:
