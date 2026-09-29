@@ -42,6 +42,12 @@ source .venv/bin/activate
 python -m pip install -e .
 ```
 
+Download and inspect CIFAR-10:
+
+```bash
+python 01-image-embeddings/download_cifar10.py
+```
+
 Start with:
 
 ```bash

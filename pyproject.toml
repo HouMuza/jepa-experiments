@@ -11,8 +11,8 @@ dependencies = [
   "matplotlib>=3.8",
   "numpy>=1.26",
   "torch>=2.2",
+  "torchvision>=0.17",
 ]
 
 [tool.setuptools.packages.find]
 include = ["jepa*"]
-
