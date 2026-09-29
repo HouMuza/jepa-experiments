@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="420" viewBox="0 0 1050 420" role="img" aria-labelledby="title desc">
+  <title id="title">A patch is projected into an embedding</title>
+  <desc id="desc">Forty-eight pixel values pass through one shared projection and produce a 128-dimensional patch embedding.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0L0 6L9 3z" fill="#475569"/></marker></defs>
+  <rect width="1050" height="420" rx="18" fill="#fbfaf7"/>
+  <text x="525" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#172033">A learned projection creates the embedding</text>
+  <g transform="translate(70 92)" font-family="Arial, sans-serif">
+    <rect width="220" height="215" rx="12" fill="#d8efe9" stroke="#56b4a5" stroke-width="2"/>
+    <g fill="#56b4a5"><rect x="40" y="37" width="140" height="8" rx="4"/><rect x="40" y="57" width="105" height="8" rx="4"/><rect x="40" y="77" width="128" height="8" rx="4"/><circle cx="110" cy="108" r="3"/><circle cx="110" cy="120" r="3"/><circle cx="110" cy="132" r="3"/><rect x="40" y="153" width="118" height="8" rx="4"/></g>
+    <text x="110" y="195" text-anchor="middle" font-size="19" font-weight="700" fill="#172033">48 pixel values</text>
+  </g>
+  <path d="M315 200H415" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <g transform="translate(445 118)" font-family="Arial, sans-serif">
+    <rect width="180" height="165" rx="18" fill="#f3b33d" stroke="#172033" stroke-width="2"/>
+    <text x="90" y="72" text-anchor="middle" font-size="21" font-weight="700" fill="#172033">Shared</text>
+    <text x="90" y="99" text-anchor="middle" font-size="21" font-weight="700" fill="#172033">projection</text>
+    <text x="90" y="130" text-anchor="middle" font-size="15" fill="#5b4630">changed by training</text>
+  </g>
+  <path d="M650 200H750" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <g transform="translate(780 84)" font-family="Arial, sans-serif">
+    <rect width="200" height="235" rx="12" fill="#eee9fb" stroke="#7c3aed" stroke-width="2"/>
+    <text x="100" y="38" text-anchor="middle" font-size="20" font-weight="700" fill="#172033">Patch embedding</text>
+    <text x="100" y="76" text-anchor="middle" font-size="18" fill="#7c3aed">[ 0.21</text>
+    <text x="100" y="105" text-anchor="middle" font-size="18" fill="#7c3aed">−0.83</text>
+    <text x="100" y="134" text-anchor="middle" font-size="18" fill="#7c3aed">0.14</text>
+    <text x="100" y="163" text-anchor="middle" font-size="18" fill="#7c3aed">⋮</text>
+    <text x="100" y="192" text-anchor="middle" font-size="18" fill="#7c3aed">0.67 ]</text>
+    <text x="100" y="220" text-anchor="middle" font-size="16" font-weight="700" fill="#172033">128 numbers</text>
+  </g>
+  <text x="525" y="372" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#475569">Training decides what information these numbers preserve.</text>
+</svg>

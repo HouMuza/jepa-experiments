@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">One RGB pixel contains three channel values</title>
+  <desc id="desc">A pixel is enlarged into separate red, green, and blue channel values.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker>
+  </defs>
+  <rect width="960" height="420" rx="18" fill="#fbfaf7"/>
+  <text x="480" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#172033">One pixel contains three measurements</text>
+  <g transform="translate(72 110)">
+    <rect width="180" height="180" rx="10" fill="#d9dfe8" stroke="#172033" stroke-width="2"/>
+    <path d="M0 45H180M0 90H180M0 135H180M45 0V180M90 0V180M135 0V180" stroke="#ffffff" stroke-width="2"/>
+    <rect x="90" y="45" width="45" height="45" fill="#7c3aed" stroke="#172033" stroke-width="3"/>
+    <text x="90" y="215" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#334155">A small image</text>
+  </g>
+  <path d="M275 178 C345 178 350 178 405 178" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <g transform="translate(430 105)">
+    <rect width="210" height="145" rx="12" fill="#7c3aed" stroke="#172033" stroke-width="3"/>
+    <text x="105" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">one pixel</text>
+    <text x="105" y="99" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#ede9fe">at one location</text>
+  </g>
+  <path d="M665 178 C710 178 710 178 748 178" fill="none" stroke="#475569" stroke-width="3" marker-end="url(#arrow)"/>
+  <g transform="translate(770 78)" font-family="Arial, sans-serif">
+    <rect width="130" height="58" rx="9" fill="#ef4444"/><text x="65" y="36" text-anchor="middle" font-size="20" font-weight="700" fill="white">Red: 124</text>
+    <rect y="72" width="130" height="58" rx="9" fill="#22a06b"/><text x="65" y="108" text-anchor="middle" font-size="20" font-weight="700" fill="white">Green: 58</text>
+    <rect y="144" width="130" height="58" rx="9" fill="#3b82f6"/><text x="65" y="180" text-anchor="middle" font-size="20" font-weight="700" fill="white">Blue: 181</text>
+  </g>
+  <text x="480" y="368" text-anchor="middle" font-family="Arial, sans-serif" font-size="19" fill="#475569">Three values describe one pixel. Thousands of values describe the complete image.</text>
+</svg>
